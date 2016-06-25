@@ -1,0 +1,31 @@
+﻿@model ProbandoLogin.Models.usuario
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Ingresar", "Login", FormMethod.Post))
+        {
+            <div>
+                @Html.LabelFor(model => model.usuario1, "Usuario")
+                @Html.TextBoxFor(model => model.usuario1)
+            </div>
+            <div>
+                @Html.LabelFor(model => model.clave, "Contraseña")
+                @Html.TextBoxFor(model => model.clave)
+            </div>
+            <div><input type="submit" value="Ingresar" /></div>
+            <div>@ViewBag.Error</div>
+        }
+    </div>
+</body>
+</html>
